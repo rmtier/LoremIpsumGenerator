@@ -31,7 +31,7 @@ For installation you only need to use header only.
 
 ```
 
-## Licencing
+## Licensing
 
 MIT License
 
