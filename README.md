@@ -11,7 +11,7 @@ Usage can be done in two forms (compile time form and runtime form).
 
 Runtime version can generate lorem ipsum text with runtime argument. If argument is too long it can throw exception.
 ```c
-	auto lorem_ipsum = lorem_ipsum::generate_lorem_ipsum_lines(3);
+auto lorem_ipsum = lorem_ipsum::generate_lorem_ipsum_lines(3);
 
 ```
 
@@ -19,7 +19,7 @@ Runtime version can generate lorem ipsum text with runtime argument. If argument
 Compile time version can generate lorem ipsum with validations done in compile time. It do not throw. This is prefered way for generating lorem ipsum.
 
 ```c
-	auto lorem_ipsum = lorem_ipsum::generate_lorem_ipsum_lines<3>();
+auto lorem_ipsum = lorem_ipsum::generate_lorem_ipsum_lines<3>();
 
 ```
 
@@ -27,7 +27,7 @@ Compile time version can generate lorem ipsum with validations done in compile t
 
 For installation you only need to use header only.
 ```c
-	#include <include/LoremIpsumGenerator.hpp>
+#include <include/LoremIpsumGenerator.hpp>
 
 ```
 
