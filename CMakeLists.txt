@@ -11,11 +11,25 @@ endif()
 
 project ("LoremIpsumGenerator")
 
-# Add source to this project's executable.
-add_executable (LoremIpsum++ "LoremIpsumGenerator.cpp")
+add_library(${PROJECT_NAME} INTERFACE)
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET LoremIpsum++ PROPERTY CXX_STANDARD 20)
+  set_property(TARGET LoremIpsumGenerator PROPERTY CXX_STANDARD 20)
 endif()
 
-# TODO: Add tests and install targets if needed.
+# Testing project
+find_package(Catch2 REQUIRED)
+add_executable(LoremIpsumGeneratorTest "test/LoremIpsumGeneratorTest.cpp")
+target_link_libraries(LoremIpsumGeneratorTest PRIVATE Catch2::Catch2WithMain)
+include_directories(LoremIpsumGeneratorTest PRIVATE include)
+
+include(CTest)
+include(Catch)
+
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET LoremIpsumGeneratorTest PROPERTY CXX_STANDARD 20)
+endif()
+
+catch_discover_tests(LoremIpsumGeneratorTest)
+
+enable_testing()

@@ -8,7 +8,7 @@
 
 namespace lorem_ipsum
 {
-	static constexpr auto c_lines = std::to_array({
+	static auto c_lines = std::to_array({
 		"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 		" Sed non risus.",
 		" Cras elementum ultrices diam.",
